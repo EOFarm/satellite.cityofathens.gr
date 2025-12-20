@@ -173,19 +173,19 @@
   "links": [
     {
       "rel": "self",
-      "href": "https://localhost:8000/stac/collections/sentinel-2-l2a-ath"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/collections/sentinel-2-l2a-ath"
     },
     {
       "rel": "parent",
-      "href": "https://localhost:8000/stac/"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/"
     },
     {
       "rel": "root",
-      "href": "localhost:8000/stac/"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/"
     },
     {
       "rel": "items",
-      "href": "https://localhost:8000/stac/collections/sentinel-2-l2a-ath/items"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/collections/sentinel-2-l2a-ath/items"
     }
   ]
 }

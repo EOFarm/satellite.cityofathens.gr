@@ -60,19 +60,19 @@
   "links": [
     {
       "rel": "self",
-      "href": "https://localhost:8000/stac/collections/landsat-c2-l2-ath"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/collections/landsat-c2-l2-ath"
     },
     {
       "rel": "parent",
-      "href": "https://localhost:8000/stac/"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/"
     },
     {
       "rel": "root",
-      "href": "localhost:8000/stac/"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/"
     },
     {
       "rel": "items",
-      "href": "https://localhost:8000/stac/collections/landsat-c2-l2-ath/items"
+      "href": "https://satellite.cityofathens.gr/pycsw/stac/collections/landsat-c2-l2-ath/items"
     }
   ]
 }
