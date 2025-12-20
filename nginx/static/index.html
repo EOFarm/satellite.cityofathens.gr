@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <title>Δήμος Αθηναίων | Υποδομή Δορυφορικών Δεδομένων</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+
+      /* GLOBAL SENTINEL-2 BACKGROUND */
+      background-image: url("images/athens-sentinel2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* GLOBAL OVERLAY FOR READABILITY */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.75);
+      z-index: -1;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #003a8f;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    /* ===== LANGUAGE SWITCH ===== */
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .lang-switch button {
+      background: #003a8f;
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      margin-left: 4px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .lang-switch button.active {
+      background: #ffcc00;
+      color: #000;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .app-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 6px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .app-card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .app-card p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .app-card a {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #003a8f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 50px;
+      padding: 15px;
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="lang-switch">
+    <button id="btn-el" class="active" onclick="setLanguage('el')">ΕΛ</button>
+    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+  </div>
+
+  <h1 data-el="Δήμος Αθηναίων"
+      data-en="City of Athens"></h1>
+  <p data-el="Υποδομή Δορυφορικών Δεδομένων"
+     data-en="Earth Observation Exploitation Platform"></p>
+</header>
+
+<main>
+  <div class="apps">
+
+    <div class="app-card">
+      <h2 data-el="Κατάλογος Δορυφορικών Δεδομένων"
+          data-en="Resource Catalogue"></h2>
+      <p data-el="Υψηλής ανάλυσης δορυφορικές εικόνες για την πόλη της Αθήνας."
+         data-en="High-resolution satellite imagery for the City of Athens."></p>
+      <a href="https://satellite.cityofathens.gr/pycsw"
+         data-el="Άνοιγμα Εφαρμογής"
+         data-en="Open Application"></a>
+    </div>
+
+    <div class="app-card">
+      <h2 data-el="Εφαρμογή Αναζήτησης και Θέασης"
+          data-en="Satellite Data Browser"></h2>
+      <p data-el="Εφαρμογή Αναζήτησης και Θέασης Δορυφορικών Δεδομένων."
+         data-en="Satellite Data Discovery and Access."></p>
+      <a href="https://satellite.cityofathens.gr/browser"
+         data-el="Άνοιγμα Εφαρμογής"
+         data-en="Open Application"></a>
+    </div>
+
+    <div class="app-card">
+      <h2 data-el="Προγραμματιστική Διεπαφή Πρόσβασης Δεδομένων"
+          data-en="Data Access API"></h2>
+      <p data-el="Προγραμματιστική Διεπαφή Πρόσβασης και Θέασης Δεδομένων."
+         data-en="Application Programming Interface for Satellite Data Access."></p>
+      <a href="https://satellite.cityofathens.gr/titiler"
+         data-el="Άνοιγμα Εφαρμογής"
+         data-en="Open Application"></a>
+    </div>
+
+    <div class="app-card">
+      <h2 data-el="Αποθετήριο Δορυφορικών Δεδομένων"
+          data-en="Satellite Data Workspace"></h2>
+      <p data-el="Πρόσβαση στο αποθετήριο ανοιχτών δορυφορικών δεδομένων."
+         data-en="Access to open satellite data repository."></p>
+      <a href="https://satellite.cityofathens.gr/data"
+         data-el="Άνοιγμα Εφαρμογής"
+         data-en="Open Application"></a>
+    </div>
+
+  </div>
+</main>
+
+<footer
+  data-el="© Δήμος Αθηναίων - Δεδομένα: Copernicus, USGS - Υποστήριξη: EOfarm"
+  data-en="© City of Athens - Data: Copernicus, USGS - Support: EOfarm">
+</footer>
+
+<script>
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-el]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+
+    document.getElementById('btn-el').classList.toggle('active', lang === 'el');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+    document.title = lang === 'el'
+      ? 'Δήμος Αθηναίων | Υποδομή Δορυφορικών Δεδομένων'
+      : 'City of Athens | Earth Observation Exploitation Platform';
+  }
+
+  setLanguage('el');
+</script>
+
+</body>
+</html>
