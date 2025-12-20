@@ -56,6 +56,8 @@ services:
   harvester:
     image: harvester:0.1.0
     container_name: harvester
+    env_file:
+      - .env
     volumes:
       - ./data:/data
     environment:
