@@ -18,8 +18,5 @@ COPY scripts /usr/local/bin/scripts
 COPY collections /collections
 RUN chmod +x /usr/local/bin/scripts/*
 
-# Copy metrics server
-# COPY metrics_server.py /usr/local/bin/metrics_server.py
-
 # Start cron
-CMD cron
+CMD cron && python3 /usr/local/bin/scripts/metrics_server.py
