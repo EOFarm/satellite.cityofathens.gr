@@ -1,0 +1,1 @@
+docker build -t harvester:0.1.0 .
