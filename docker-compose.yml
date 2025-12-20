@@ -32,6 +32,15 @@ services:
       - CORS_ORIGINS=*
     restart: unless-stopped
 
+  stac-browser:
+    image: stac-browser:4.0.0
+    container_name: stac-browser
+    ports:
+      - 8080:8080
+    environment:
+      SB_catalogUrl: "https://satellite.cityofathens.gr/pycsw/stac"
+    restart: unless-stopped
+
   nginx:
     image: nginx:1.29.3
     container_name: nginx
