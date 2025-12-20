@@ -109,5 +109,5 @@ metadata:
             end: YYYY-MM-DD
  
 repository:
-    database: 'postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}'
+    database: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db/${POSTGRES_DB}
     table: records
