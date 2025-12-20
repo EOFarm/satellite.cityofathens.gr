@@ -1,0 +1,9 @@
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday = 0)
+# │ │ │ │ │
+# * * * * *  user command to execute
+# */5 * * * * root python3 /usr/local/bin/scripts/landsat_stac_downloader_crop.py --download-folder /data --start-date 2025-10-14 --end-date 2025-11-01 --bbox 23.69,37.96,23.74,37.98 --path 183 --row 034 >> /var/log/cron.log 2>&1
+# */5 * * * * root python3 /usr/local/bin/scripts/sentinel_stac_downloader_crop.py --download-folder /data --start-date 2025-10-28 --end-date 2025-11-01 --bbox 23.69,37.96,23.74,37.98 --tile 34SGH >> /var/log/cron.log 2>&1

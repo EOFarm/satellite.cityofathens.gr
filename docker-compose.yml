@@ -55,5 +55,16 @@ services:
       - titiler
     restart: unless-stopped
 
+  harvester:
+    image: harvester:0.1.0
+    container_name: harvester
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=UTC
+    depends_on:
+      - pycsw
+    restart: unless-stopped
+
 volumes:
   db-data:
