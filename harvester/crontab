@@ -5,5 +5,5 @@
 # │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday = 0)
 # │ │ │ │ │
 # * * * * *  user command to execute
-# */5 * * * * root python3 /usr/local/bin/scripts/landsat_stac_downloader_crop.py --download-folder /data --start-date 2025-10-14 --end-date 2025-11-01 --bbox 23.69,37.96,23.74,37.98 --path 183 --row 034 >> /var/log/cron.log 2>&1
-# */5 * * * * root python3 /usr/local/bin/scripts/sentinel_stac_downloader_crop.py --download-folder /data --start-date 2025-10-28 --end-date 2025-11-01 --bbox 23.69,37.96,23.74,37.98 --tile 34SGH >> /var/log/cron.log 2>&1
+# */6 * * * * root python3 /usr/local/bin/scripts/landsat_stac_downloader_crop.py --download-folder /data --start-date 2025-10-14 --end-date 2025-11-01 --bbox 23.61,37.84,23.85,38.12 --path 183 --row 034 >> /var/log/cron.log 2>&1
+# */6 * * * * root python3 /usr/local/bin/scripts/sentinel_stac_downloader_crop.py --download-folder /data --start-date 2025-10-28 --end-date 2025-11-01 --bbox 23.61,37.84,23.85,38.12 --tile 34SGH >> /var/log/cron.log 2>&1
