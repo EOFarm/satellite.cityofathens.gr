@@ -56,6 +56,7 @@
     ],
     "eo:bands": [
       {
+        "gsd": 10,
         "name": "AOT",
         "description": "aerosol optical thickness"
       },
@@ -153,11 +154,22 @@
         "description": "short-wave infrared, snow/ice/cloud classification",
         "center_wavelength": 2.19,
         "full_width_half_max": 0.242
+      },
+      {
+        "gsd": 20,
+        "name": "SCL",
+        "description": "scene classification map"
+      },
+      {
+        "gsd": 10,
+        "name": "WVP",
+        "description": "water vapour"
       }
     ],
     "platform": [
       "Sentinel-2A",
-      "Sentinel-2B"
+      "Sentinel-2B",
+      "Sentinel-2C"
     ],
     "instruments": [
       "msi"

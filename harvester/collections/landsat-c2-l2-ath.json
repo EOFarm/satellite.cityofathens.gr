@@ -6,7 +6,7 @@
     "https://stac-extensions.github.io/view/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
-  "title": "Landsat Collection 2 Level-2 UTM Surface Reflectance (SR) Product - Athens",
+  "title": "Landsat Collection 2 Level-2 - Athens",
   "description": "The Landsat Surface Reflectance (SR) product measures the fraction of incoming solar radiation that is reflected from Earth's surface to the Landsat sensor.",
   "keywords": [
     "landsat",
