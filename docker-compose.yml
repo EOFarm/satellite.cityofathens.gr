@@ -66,5 +66,40 @@ services:
       - pycsw
     restart: unless-stopped
 
+  actinia:
+    build:
+      context: https://github.com/mundialis/athen_urban-green.git#main
+      dockerfile: docker/Dockerfile
+    volumes:
+      # export directory for data storage:
+      # /home/LOCAL/DIRECTORY:/src/data_tmp
+      ${LOCAL_HTTP_BASE_URL}:/src/data_tmp
+    env_file:
+      - .env
+    environment:
+      ACTINIA_USER: ${ACTINIA_USER}
+      ACTINIA_PW: ${ACTINIA_PW}
+      EODAG_USER: ${EODAG_USER}
+      EODAG_PW: ${EODAG_PW}
+    ports:
+      - "8088:8088"
+    depends_on:
+      - valkey
+
+  valkey:
+    image: valkey/valkey:8.1-alpine
+    volumes:
+      - ./valkey_data:/data
+    environment:
+      - VALKEY_PASS_FILE=/data/config/.valkey
+    command: [
+      "sh", "-c",
+      '
+      docker-entrypoint.sh
+      "/data/config/valkey.conf"
+      --requirepass "$$(cat $$VALKEY_PASS_FILE)"
+      '
+    ]
+
 volumes:
   db-data:
