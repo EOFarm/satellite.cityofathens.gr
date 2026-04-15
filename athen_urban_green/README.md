@@ -67,7 +67,7 @@ The output data are NDVI, NDWI and categorized versions of both indices. They
 are exported as Cloud-Optimized GeoTIFFs (COGs) and published as STAC items in 
 the defined STAC catalog and collections. The export directory of the COGs is 
 defined as mounted directory in the `./docker-compose.yml` for the actinia 
-container (`your/local/data/directory:/src/data_tmp`).
+container (`/DATA/DIRECTORY:/src/export_dir`).
 
 
 #### Script parameters

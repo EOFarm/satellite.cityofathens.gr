@@ -72,8 +72,7 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       # export directory for data storage:
-      # /home/LOCAL/DIRECTORY:/src/data_tmp
-      ${LOCAL_HTTP_BASE_URL}:/src/data_tmp
+      /DATA/DIRECTORY:/src/export_dir
     env_file:
       - .env
     environment:
