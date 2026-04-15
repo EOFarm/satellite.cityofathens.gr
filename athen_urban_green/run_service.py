@@ -3,7 +3,7 @@
 #
 ############################################################################
 # MODULE:      start_processing
-# AUTHOR(S):   Jonas Pischke
+# AUTHOR(S):   Jonas Pischke, Julias Haas
 #
 # PURPOSE:     Run complete service
 #
@@ -40,7 +40,7 @@ MAIN_PC_PATH = "athen_urban_green/process_chains/"
 S2_ID_PROCESS_CHAIN = "process_chain_filter_S2_scenes.json.j2"
 MAIN_PROCESS_CHAIN = "process_chain_S2_processing.json.j2"
 
-# variables to set the actinia host, version, and user
+# actinia variables
 GRASS_PROJECT = "athen_urban-green_epsg32634"
 ACTINIA_BASEURL = "http://localhost:8088"
 ACTINIA_VERSION = "v3"
