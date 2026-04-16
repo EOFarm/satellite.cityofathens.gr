@@ -9,10 +9,38 @@ for the workflow are located in the `athen_urban_green/templates` folder.
 The main output are NDVI, NDWI and categorized versions of these indices. All 
 of these are published as STAC items.
 
+## Output data
+
+The main output layers are exported as Cloud Optimized GeoTIFFs (COG) and published as STAC items in the defined STAC catalog and collections:
+
+- NDVI (Normalized Difference Vegetation Index)
+- Categorized NDVI
+- NDWI (Normalized Difference Water Index) 
+- Categorized NDWI
+
+The export directory of the COGs is defined as mounted directory in the `./docker-compose.yml` for the actinia container (`/DATA/DIRECTORY:/src/export_dir`).
+
+Categorization thresholds for NDVI and NDWI are defined in [athen_urban_green](https://github.com/mundialis/athen_urban-green).
+
+Used index equations:
+- NDVI = (NIR - Red) / (NIR + Red)
+- NDWI = (( NIR - SWIR ) / ( NIR + SWIR ))
+
+NDVI classes (raster values in brackets):
+- no vegetation (1): -1 to 0.1
+- bare soil (2): 0.1 to 0.2
+- sparse/stressed vegetation (3): 0.2 to 0.5
+- dense/healthy vegetation (4): 0.5 to 1.0
+
+NDWI classes (raster values in brackets):
+- barren (1): -1 to -0.1
+- water stress (2): 0.1 to 0.4
+- no water stress (3): 0.4 to 1.0
+
 ## How to use the workflow
 
 A detailed description of the actinia workflow for urban green monitoring can be 
-found in the [athen_urban_green repo](https://github.com/mundialis/athen_urban-green/blob/main/README.md)
+found in the [athen_urban_green](https://github.com/mundialis/athen_urban-green/blob/main/README.md) repository.
 
 ### 1. Configuration
 
@@ -61,14 +89,6 @@ In order to be able to register the created STAC items, the STAC collections
 defined in `STAC_COLLECTIONS` need to exist in the STAC catalog defined in 
 `STAC_CATALOG_URL`. 
 
-#### Output data
-
-The output data are NDVI, NDWI and categorized versions of both indices. They 
-are exported as Cloud-Optimized GeoTIFFs (COGs) and published as STAC items in 
-the defined STAC catalog and collections. The export directory of the COGs is 
-defined as mounted directory in the `./docker-compose.yml` for the actinia 
-container (`/DATA/DIRECTORY:/src/export_dir`).
-
 
 #### Script parameters
 
@@ -87,7 +107,7 @@ Important script parameters to adapt before production runs:
     sets `START_TIME` accordingly and `END_TIME` to current time. For the 
     current settings, the collection `ndvi-ath` is used which is updated with 
     each workflow run. Check with names defined in `STAC_COLLECTIONS`.
-- `TILE_ID`: Sentinel-2 tile identifier e.g. `34SGH` for Athens area
+- `TILE_ID`: Sentinel-2 tile identifier (MGRS tile id)  e.g. `34SGH` for Athens area
 - `MAX_CLOUD_COVER`: Max. cloud cover threshold
 - AOI: The workflow uses a predefined AOI for Athens (it is defined in 
 [athen_urban_green](https://github.com/mundialis/athen_urban-green/tree/main/processing/input/aoi) 
