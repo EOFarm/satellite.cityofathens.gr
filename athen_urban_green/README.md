@@ -33,9 +33,12 @@ NDVI classes (raster values in brackets):
 - dense/healthy vegetation (4): 0.5 to 1.0
 
 NDWI classes (raster values in brackets):
-- barren (1): -1 to -0.1
-- water stress (2): 0.1 to 0.4
-- no water stress (3): 0.4 to 1.0
+- barren soil (1): -1000 to -200  
+- strong water stress (2): -200 to 0  
+- medium water stress (3): 0 to 100  
+- low water stress (4): 100 to 200  
+- no water stress (5): 200 to 1000
+
 
 ## How to use the workflow
 
