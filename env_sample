@@ -6,3 +6,7 @@ PYCSW_SERVER_URL=https://satellite.cityofathens.gr/pycsw
 PYCSW_URL=https://satellite.cityofathens.gr/pycsw
 TITILER_URL=https://satellite.cityofathens.gr/titiler
 LOCAL_HTTP_BASE_URL=https://satellite.cityofathens.gr/data
+ACTINIA_USER=<your_user>
+ACTINIA_PW=<your_password>
+EODAG_USER=<your_CDSE_user>
+EODAG_PW=<your_CDSE_password>
