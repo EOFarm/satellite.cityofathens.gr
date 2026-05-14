@@ -72,7 +72,7 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       # export directory for data storage:
-      /DATA/DIRECTORY:/src/export_dir
+      - /DATA/DIRECTORY:/src/export_dir
     env_file:
       - .env
     environment:
