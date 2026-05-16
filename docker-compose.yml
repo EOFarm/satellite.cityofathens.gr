@@ -73,6 +73,7 @@ services:
     volumes:
       # export directory for data storage:
       - /data:/src/export_dir
+    container_name: actinia
     env_file:
       - .env
     environment:
@@ -87,6 +88,7 @@ services:
 
   valkey:
     image: valkey/valkey:8.1-alpine
+    container_name: valkey
     volumes:
       - ./valkey_data:/data
     environment:
