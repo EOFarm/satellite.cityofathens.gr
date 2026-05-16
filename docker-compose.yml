@@ -90,7 +90,7 @@ services:
     image: valkey/valkey:8.1-alpine
     container_name: valkey
     volumes:
-      - ./valkey_data:/data
+      - ./valkey:/data
     environment:
       - VALKEY_PASS_FILE=/data/config/.valkey
     command: [
