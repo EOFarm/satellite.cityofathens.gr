@@ -1,0 +1,75 @@
+{
+  "type": "Collection",
+  "stac_version": "1.0.0",
+  "id": "ndwi-cat-ath",
+  "title": "Athens Urban Green Monitoring - Categorized NDWI",
+  "description": "Categorized NDWI product describing vegetation water stress classes.",
+  "license": "proprietary",
+  "keywords": [
+    "NDWI",
+    "water stress",
+    "classification",
+    "urban green",
+    "Athens"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          23.61,
+          37.84,
+          23.85,
+          38.12
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2025-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "City of Athens",
+      "roles": ["producer", "host"]
+    },
+    {
+      "name": "mundialis",
+      "roles": ["processor"]
+    }
+  ],
+  "summaries": {
+    "product_type": ["NDWI_categorized"],
+    "classes": [
+      {
+        "value": 1,
+        "name": "barren soil",
+        "range": "-1000 to -200"
+      },
+      {
+        "value": 2,
+        "name": "strong water stress",
+        "range": "-200 to 0"
+      },
+      {
+        "value": 3,
+        "name": "medium water stress",
+        "range": "0 to 100"
+      },
+      {
+        "value": 4,
+        "name": "low water stress",
+        "range": "100 to 200"
+      },
+      {
+        "value": 5,
+        "name": "no water stress",
+        "range": "200 to 1000"
+      }
+    ]
+  }
+}

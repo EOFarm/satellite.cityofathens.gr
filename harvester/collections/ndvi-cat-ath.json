@@ -1,0 +1,70 @@
+{
+  "type": "Collection",
+  "stac_version": "1.0.0",
+  "id": "ndvi-cat-ath",
+  "title": "Athens Urban Green Monitoring - Categorized NDVI",
+  "description": "Categorized NDVI derived from Sentinel-2 imagery for urban vegetation monitoring.",
+  "license": "proprietary",
+  "keywords": [
+    "NDVI",
+    "vegetation",
+    "classification",
+    "urban green",
+    "Athens"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          23.61,
+          37.84,
+          23.85,
+          38.12
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2025-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "City of Athens",
+      "roles": ["producer", "host"]
+    },
+    {
+      "name": "mundialis",
+      "roles": ["processor"]
+    }
+  ],
+  "summaries": {
+    "product_type": ["NDVI_categorized"],
+    "classes": [
+      {
+        "value": 1,
+        "name": "no vegetation",
+        "range": "-1 to 0.1"
+      },
+      {
+        "value": 2,
+        "name": "bare soil",
+        "range": "0.1 to 0.2"
+      },
+      {
+        "value": 3,
+        "name": "sparse/stressed vegetation",
+        "range": "0.2 to 0.5"
+      },
+      {
+        "value": 4,
+        "name": "dense/healthy vegetation",
+        "range": "0.5 to 1.0"
+      }
+    ]
+  }
+}

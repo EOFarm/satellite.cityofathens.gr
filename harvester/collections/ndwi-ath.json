@@ -1,0 +1,48 @@
+{
+  "type": "Collection",
+  "stac_version": "1.0.0",
+  "id": "ndwi-ath",
+  "title": "Athens Urban Green Monitoring - NDWI",
+  "description": "Normalized Difference Water Index generated from Sentinel-2 imagery for vegetation water stress monitoring.",
+  "license": "proprietary",
+  "keywords": [
+    "NDWI",
+    "water stress",
+    "urban green",
+    "Athens",
+    "Sentinel-2"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          23.61,
+          37.84,
+          23.85,
+          38.12
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2025-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "City of Athens",
+      "roles": ["producer", "host"]
+    },
+    {
+      "name": "mundialis",
+      "roles": ["processor"]
+    }
+  ],
+  "summaries": {
+    "product_type": ["NDWI"]
+  }
+}
