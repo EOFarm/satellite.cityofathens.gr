@@ -28,8 +28,8 @@ from requests.auth import HTTPBasicAuth
 AUTOMATIC_TIME_RANGE = False
 STAC_COLLECTION_URL = "http://pycsw:8000/stac/collections/ndvi-ath"
 # for manual time range definition
-START_TIME = "2026-04-05"
-END_TIME = "2026-04-10"
+START_TIME = "2026-04-13"
+END_TIME = "2026-04-15"
 # Sentinel-2 tile
 TILE_ID = "34SGH"
 # set max cloud cover
@@ -61,6 +61,10 @@ STAC_ITEM_DESCRIPTION = (
     "NDVI + NDWI raster maps based on Sentinel-2 of Athens for urban green "
     "spaces monitoring."
 )
+
+# STAC item asset href directory
+ASSET_DIR = "/data"
+
 
 # ### FUNCTIONS ###
 # helper function to print formatted JSON using the json module
@@ -254,6 +258,7 @@ def main() -> None:
         "stac_item_description": STAC_ITEM_DESCRIPTION,
         "stac_catalog_url": STAC_CATALOG_URL,
         "stac_collections": STAC_COLLECTIONS,
+        "asset_dir": ASSET_DIR,
     }
 
     process_chain = update_process_chain_variables(
