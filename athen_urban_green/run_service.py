@@ -65,6 +65,9 @@ STAC_ITEM_DESCRIPTION = (
 # STAC item asset href directory
 ASSET_DIR = "/data"
 
+# Timeout for requests (connect timeout, read timeout)
+TIMEOUT= (5, 60)
+
 
 # ### FUNCTIONS ###
 # helper function to print formatted JSON using the json module
@@ -97,7 +100,7 @@ def verify_request(
         print("See errors below:")
         print_as_json(request.json())
         request_url = request.json()["urls"]["status"]
-        requests.delete(url=request_url, auth=actinia_auth, timeout=20)
+        requests.delete(url=request_url, auth=actinia_auth, timeout=TIMEOUT)
         raise HasBeenTerminatedError(request_url)
 
 
@@ -113,7 +116,7 @@ def post_request(
         url=request_url,
         auth=actinia_auth,
         json=process_chain,
-        timeout=20,
+        timeout=TIMEOUT,
     )
     # check if anything went wrong
     verify_request(request, actinia_auth, 200)
@@ -131,7 +134,7 @@ def get_request(request_url: str, actinia_auth: HTTPBasicAuth) -> dict:
     request = requests.get(
         url=request_url,
         auth=actinia_auth,
-        timeout=20,
+        timeout=TIMEOUT,
     )
     verify_request(request, actinia_auth, 200)
     return request.json()
